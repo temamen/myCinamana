@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+  <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+  <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/animations-extended.min.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/mdb.min.css">
+
+  <link href="css/fontawesome.css" rel="stylesheet">
+  <link href="css/brands.css" rel="stylesheet">
+  <link href="css/solid.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!--Main Navigation-->
+  <header>
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4">
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
+            <!-- <i class="fas fa-home"></i> -->
+            <i class="fa fa-home fa-fw me-3"></i><span class="pl-4">HOME</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple" onclick="displayMovies('RELEASES')"><i
+              class="fa fa-fire fa-fw me-3"></i><span class="pl-4">NEW RELEASES</span></a>
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple" onclick="displayMovies('POPULAR')"><i
+              class="fa fa-star fa-fw me-3"></i><span class="pl-4">POPULAR</span></a>
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fa fa-film fa-fw me-3"></i><span class="pl-4">FILM</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+              class="fa fa-tv fa-fw me-3"></i><span class="pl-4">Serias</span></a>
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+              class="fa fa-tint fa-fw me-3"></i><span class="pl-4">ANIME</span></a>
+          <!-- //////////////////////////////////////////////////////////////////////// -->
+          <a href="#" class="list-group-item-split  py-2 ripple"><i class="fa fa-building fa-fw me-3"></i><span
+              class="pl-4">ENIMATION</span></a>
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple" onclick="displayMovies('COMEDY')"><i
+              class="fa fa-calendar fa-fw me-3"></i><span class="pl-4">COMEDY</span></a>
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+              class="fa fa-users fa-fw me-3"></i><span class="pl-4">DOCUMENTARY</span></a>
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+              class="fa fa-money-bill fa-fw me-3"></i><span class="pl-4">DRAMA</span></a>
+          <!-- ///////////////////////////////////////////////////////////////// -->
+          <a href="#" class="list-group-item-split  py-2 ripple"><i class="fa fa-building fa-fw me-3"></i><span
+              class="pl-4">ENIMATION</span></a>
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+              class="fa fa-calendar fa-fw me-3"></i><span class="pl-4">COMEDY</span></a>
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+              class="fa fa-users fa-fw me-3"></i><span class="pl-4">DOCUMENTARY</span></a>
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+              class="fa fa-money-bill fa-fw me-3"></i><span class="pl-4">DRAMA</span></a>
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+          aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- Brand -->
+        <!-- <a class="navbar-brand" href="#">
+          Cinema
+        </a> -->
+        <!-- //////////////////////////logo//////////////////////////// -->
+        <a>
+          <img height="40px"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDMzMi44MDQgMzMyLjgwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8Zz4KCQkJPHBhdGggZD0iTTMzMC44MDQsMTcxLjAwMmMtMy42LTYuNC0xMi04LjgtMTguOC00LjhsLTQ1LjYsMjYuNGwtMTEuNiw2Ljh2NjMuMmwxMC44LDYuNGMwLjQsMCwwLjQsMC40LDAuOCwwLjRsNDQuOCwyNiAgICAgYzIsMS42LDQuOCwyLjQsNy42LDIuNGM3LjYsMCwxMy42LTYsMTMuNi0xMy42di01My42bDAuNC01Mi44QzMzMi44MDQsMTc1LjQwMiwzMzIuNDA0LDE3My4wMDIsMzMwLjgwNCwxNzEuMDAyeiIgZmlsbD0iI2UxMjUxZSIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9wYXRoPgoJCQk8cGF0aCBkPSJNNjQuNDA0LDE1MC42MDJjMzUuNiwwLDY0LjQtMjguOCw2NC40LTY0LjRjMC0zNS42LTI4LjgtNjQuNC02NC40LTY0LjRzLTY0LjQsMjguOC02NC40LDY0LjQgICAgIEMtMC4zOTYsMTIxLjgwMiwyOC44MDQsMTUwLjYwMiw2NC40MDQsMTUwLjYwMnogTTY0LjQwNCw1OS44MDJjMTQuOCwwLDI2LjQsMTIsMjYuNCwyNi40YzAsMTQuOC0xMiwyNi40LTI2LjQsMjYuNCAgICAgYy0xNC40LDAtMjYuNC0xMi0yNi40LTI2LjRDMzcuNjA0LDcxLjQwMiw0OS42MDQsNTkuODAyLDY0LjQwNCw1OS44MDJ6IiBmaWxsPSIjZTEyNTFlIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+CgkJCTxwYXRoIGQ9Ik0yMjcuNjA0LDE1NC4yMDJjLTEwLjQsNS4yLTIyLDguNC0zNC40LDguNGMtMTUuMiwwLTI5LjYtNC40LTQxLjYtMTIuNGgtNDUuNmMtMTIsOC0yNi40LDEyLjQtNDEuNiwxMi40ICAgICBjLTEyLjQsMC0yNC0yLjgtMzQuNC04LjRjLTkuMiw1LjItMTUuNiwxNS42LTE1LjYsMjYuOHY5Ny42YzAsMTgsMTQuOCwzMi40LDMyLjQsMzIuNGgxNjQuNGMxOCwwLDMyLjQtMTQuOCwzMi40LTMyLjR2LTk3LjYgICAgIEMyNDMuMjA0LDE2OS44MDIsMjM2LjgwNCwxNTkuNDAyLDIyNy42MDQsMTU0LjIwMnoiIGZpbGw9IiNlMTI1MWUiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCQkJPHBhdGggZD0iTTE5My4yMDQsMTUwLjYwMmMzNS42LDAsNjQuNC0yOC44LDY0LjQtNjQuNGMwLTM1LjYtMjguOC02NC40LTY0LjQtNjQuNGMtMzUuNiwwLTY0LjQsMjguOC02NC40LDY0LjQgICAgIEMxMjguODA0LDEyMS44MDIsMTU3LjYwNCwxNTAuNjAyLDE5My4yMDQsMTUwLjYwMnogTTE5My4yMDQsNTkuODAyYzE0LjgsMCwyNi40LDEyLDI2LjQsMjYuNGMwLDE0LjgtMTIsMjYuNC0yNi40LDI2LjQgICAgIGMtMTQuNCwwLTI2LjQtMTItMjYuNC0yNi40QzE2Ni44MDQsNzEuNDAyLDE3OC40MDQsNTkuODAyLDE5My4yMDQsNTkuODAyeiIgZmlsbD0iI2UxMjUxZSIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9wYXRoPgoJCTwvZz4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+" />
+          <!-- <h1 id="h1Logo">CINEMA</h1> -->
+          <span class="logoText" style='vertical-align:middle; display:inline;'> CINEMA</span>
+        </a>
+
+        <!-- ///////////////////////////////////////////////////// -->
+
+        <!-- Search form -->
+        <form class="d-none d-md-flex input-group w-auto my-auto">
+          <input autocomplete="off" type="search" class="form-control rounded" placeholder='Search'
+            style="min-width: 225px;" />
+          <span class="input-group-text border-0"><i class="fa fa-search"></i></span>
+        </form>
+
+        <!-- Right links -->
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+          <!-- Notification dropdown -->
+          <li class="nav-item">
+            <a class="nav-link me-3 me-lg-0" href="#" id="navbarDropdownMenuLink" role="button"
+              data-mdb-toggle="dropdown" aria-expanded="false">
+
+              <span class="badge rounded-pill badge-notification bg-danger">English</span>
+            </a>
+
+          </li>
+
+
+
+          <!-- Icon dropdown -->
+
+
+
+          <!-- Avatar -->
+          <li class="nav-item">
+            <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+              id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle" height="22"
+                alt="" loading="lazy" />
+              <span>Login</span>
+            </a>
+
+          </li>
+        </ul>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <div class="container">
+    <!-- Accordion -->
+    <div class="row">
+      <div class="accordion mr-5">
+        <ul>
+          <li>
+            <div class="image_title">
+              <a href="#">Transformers: The Last Knight</a>
+            </div>
+            <a href="https://ibb.co/gGv6QS"><img src="https://image.ibb.co/k7P0kS/transformers4_640x320.jpg"
+                alt="transformers4_640x320" border="0"></a>
+          </li>
+          <li>
+            <div class="image_title">
+              <a href="#">Blade Runner 2049</a>
+            </div>
+            <a href="https://ibb.co/cXjfKn"><img src="https://image.ibb.co/ct9rQS/Blade_Runner2049_640x320.jpg"
+                alt="Blade_Runner2049_640x320" border="0"></a>
+          </li>
+          <li>
+            <div class="image_title">
+              <a href="#">Guardians of the Galaxy: Vol. 2</a>
+            </div>
+            <a href="https://ibb.co/b4nLkS"><img src="https://image.ibb.co/jAu0kS/GOG2_640x320.jpg" alt="GOG2_640x320"
+                border="0"></a>
+          </li>
+          <li>
+            <div class="image_title">
+              <a href="#">Spiderman: Homecoming</a>
+            </div>
+            <a href="https://ibb.co/mC5Uen"><img src="https://image.ibb.co/da7xX7/spiderman_homecoming_640x320.jpg"
+                alt="spiderman_homecoming_640x320" border="0"></a>
+          </li>
+          <li>
+            <div class="image_title">
+              <a href="#">Wonder Woman</a>
+            </div>
+            <a href="https://ibb.co/enV1s7"><img src="https://image.ibb.co/dHdAkS/Wonder_Woman_640x320.jpg"
+                alt="Wonder_Woman_640x320" border="0"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--End accordion-->
+
+ 
+
+  </div>
+  <main style="margin-top: 58px;">
+    <div class="row" id="mainAnother">
+      <!--Javascript-->
+
+    </div>
+  </main>
+  <main style="margin-top: 58px;">
+    <div class="row container-movei" id="main">
+      <!--Javascript-->
+
+    </div>
+  </main>
+
+
+  <script src="js/main.js"></script>
+  <script src="js/fontawesome.min.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
